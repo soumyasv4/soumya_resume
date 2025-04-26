@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumya's Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #0c2034;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #0c2034;
+            --text-color: #333;
+            --section-padding: 60px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: var(--section-padding);
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d') center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: var(--light-color);
+        }
+        
+        .job {
+            background-color: white;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .job:hover {
+            transform: translateY(-5px);
+        }
+        
+        .job-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .job-company {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .job-duration {
+            color: #777;
+        }
+        
+        .job ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .job li {
+            margin-bottom: 8px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background-color: white;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-item {
+            background-color: var(--light-color);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        /* Education Section */
+        .education {
+            background-color: var(--light-color);
+        }
+        
+        .education-item {
+            background-color: white;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .education-degree {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .education-date {
+            color: #777;
+        }
+        
+        /* Certifications Section */
+        .certifications {
+            background-color: white;
+        }
+        
+        .cert-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .cert-item {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cert-item i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .job-title {
+                flex-direction: column;
+            }
+            
+            .education-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Soumya Shukla</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="./1684570806588.jpeg" alt="Avatar" style="border-radius: 50%; height: 200px;">
+                <h1>Soumya Shukla</h1>
+                <p>IT Business Analyst, Sydney, Australia</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/soumya-shukla-a59665190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:soumya.shukla4@gmail.com" title="soumya.shukla4@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Professional Summary</h2>
+            <p>IT Business Analyst with over 6 years' experience across telecom, government, insurance, and aviation
+                industries. Skilled in optimizing customer experiences, collaborating with cross-functional teams, and delivering
+                data-driven insights to enhance digital solutions.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            
+            <div class="job">
+                <div class="job-title">
+                    <h3 class="job-company">Digital Business Analyst, Qantas Loyalty (Novon Consulting), Sydney</h3>
+                    <span class="job-duration">April 2023 - Present</span>
+                </div>
+                <p>Digital Business Analyst in Qantas Loyalty Product squad, focused on improving and optimizing customer experience for Qantas Points redemption:</p>
+                <ul>
+                    <li>Collaborated with business leads and technical teams to define strategic business goals, establish project scopes, gather requirements, and facilitate scrum ceremonies for key products and initiatives.</li>
+                    <li>For Classic Rewards Plus launch, Use Points page revamp and Qantas Top-up Points redesign, gathered and refined business and technical requirements with key stakeholders, resulting in a cumulative increase of 95% monthly traffic.</li>
+                    <li>Enhanced user experience by improving UI accessibility features, streamlining user journeys, and conducting thorough UI testing for above mentioned products.</li>
+                    <li>Developed and maintained performance dashboards using Adobe and Google Analytics, providing insights into page visits, unique visitors, click-through rates, conversion rates, and user flows across Qantas websites and mobile apps.</li>
+                    <li>Led the adoption of Generative AI tools in the team, including building a Q&A chatbot for internal resources to improve productivity.</li>
+                    <li>Mentored graduate Business Analysts to develop core BA skills and accelerate their growth within project environments.</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-title">
+                    <h3 class="job-company">Business Analyst, Bluewater Control, Sydney</h3>
+                    <span class="job-duration">October 2022 – March 2023</span>
+                </div>
+                <p>Business Analyst in product team, leading the development of the Bluewater asset and inventory management platform for telecom industry clients:</p>
+                <ul>
+                    <li>Partnered with product and tech teams for the upgrade of the asset management platform from v1 to v2, expanding the user base to 52 businesses across Asia-Pacific.</li>
+                    <li>Collaborated with sales, customer success, and UX teams to collect user feedback, understand challenges within the v1 system and usage patterns from usability standpoint.</li>
+                    <li>Brainstormed, prototyped and showcased solution designs to stakeholders in collaboration with design and engineering teams; ensured solutions meet customer's functional and non-functional requirements.</li>
+                    <li>Managed product roadmap delivery through facilitating scrum ceremonies: daily stand-up, refinements, retrospectives, and sprint reviews.</li>
+                    <li>Delivered customer presentations for new product features and releases.</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-title">
+                    <h3 class="job-company">Business Analyst, National Disability Insurance Agency, Melbourne</h3>
+                    <span class="job-duration">October 2021 – September 2022</span>
+                </div>
+                <p>Business Analyst in Provisioning, Permission, and Routing team, responsible for migrating permission sets and user groups from SAP to Salesforce CRM system for 53 teams across organization:</p>
+                <ul>
+                    <li>Led the migration of permission sets and user groups from SAP to Salesforce CRM system for 53 teams, ensuring a smooth transition and minimal disruption to operations.</li>
+                    <li>Collaborated with stakeholders and subject matter experts to identify and document business needs and processes related to the digital system migration.</li>
+                    <li>Analysed existing data and processes, identified competing demands and organizational changes, and proposed solutions to optimize the migration process.</li>
+                    <li>Evaluated the effectiveness of proposed solutions and designs, ensuring they met stakeholder requirements and aligned with organizational goals.</li>
+                    <li>Successfully implemented a workflow routing and provisioning framework for users, enabling seamless access to the new Salesforce CRM system.</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-title">
+                    <h3 class="job-company">Assistant Project Coordinator, Project Management Institute, Melbourne</h3>
+                    <span class="job-duration">July 2021 – October 2021</span>
+                </div>
+                <p>Planned the PMDoS 2021 event with project manager, project team, steering committee, and sponsors:</p>
+                <ul>
+                    <li>Supported the maintenance of documentation throughout the duration of the initiative including but not limited to – business case, charter, project plan, lessons learnt, weekly status reports, steering committee report.</li>
+                    <li>Coordinated with the Business Analyst to work on the budget, issues, and risks of the project.</li>
+                    <li>Delivered all required outcomes on time and in line with project expectations.</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-title">
+                    <h3 class="job-company">Scrum Master, Jet Airways, Delhi, India</h3>
+                    <span class="job-duration">June 2016 – June 2019</span>
+                </div>
+                <p>Worked as Project Coordinator and Scrum Master in operations. Gained experience with SAPs/4 Hana Cloud and SAP 6.0:</p>
+                <ul>
+                    <li>Collaborated with team members to research and elicit functional and non-functional requirements and facilitate potentially shippable incremental planning sessions.</li>
+                    <li>Organized and facilitated work plans, daily-standups, reviews, retrospectives, release plans, demos and meetings.</li>
+                    <li>Collaborated with the market experts to learn appropriate strategies to increase productivity and foster innovation across the team.</li>
+                    <li>Performed UAT requirement analysis, created and executed UAT scenarios.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Hard Skills</h3>
+                    <div class="skill-item">Agile, Waterfall Methodologies and Ceremonies</div>
+                    <div class="skill-item">Requirements Gathering and Business Process Improvement</div>
+                    <div class="skill-item">User Acceptance Testing</div>
+                    <div class="skill-item">Backlog Management</div>
+                    <div class="skill-item">Product Management and Business Presentation</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-item">Confluence/Jira</div>
+                    <div class="skill-item">JIRA Workflow Management</div>
+                    <div class="skill-item">AWS Cloud Fundamentals</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Analytics</h3>
+                    <div class="skill-item">Adobe Analytics</div>
+                    <div class="skill-item">Tableau, Datadog</div>
+                    <div class="skill-item">SQL</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Software</h3>
+                    <div class="skill-item">Salesforce, SAP</div>
+                    <div class="skill-item">MS Excel (Advanced)</div>
+                    <div class="skill-item">MS PowerPoint (Advanced)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <h3 class="education-degree">Master of Information Systems (Melbourne School of Engineering Scholarship)</h3>
+                    <span class="education-date">July 2019 – June 2021</span>
+                </div>
+                <p>University of Melbourne, Australia</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <h3 class="education-degree">Bachelor of Computer Science</h3>
+                    <span class="education-date">June 2012 – June 2016</span>
+                </div>
+                <p>RGPV, Bhopal, India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="cert-container">
+                <div class="cert-item">
+                    <i class="fab fa-aws"></i>
+                    <a href="https://www.credly.com/badges/4a941f02-cd73-468f-888b-595d6cd52446" target="_blank">AWS Certified Cloud Practitioner - Amazon Web Services</a>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-certificate"></i>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/63JPL5T55G6V" target="_blank">Digital Product Management - Coursera</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Soumya's Portfolio. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/soumya-shukla-a59665190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:soumya.shukla4@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add active class to navigation links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
