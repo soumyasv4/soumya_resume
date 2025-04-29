@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soumya's Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
         /* Global Styles */
         :root {
@@ -240,6 +241,108 @@
             color: #777;
         }
         
+        /* Projects Section */
+        .projects {
+            background-color: var(--light-color);
+            overflow: hidden;
+        }
+        
+        .swiper {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+        }
+        
+        .project-card {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 150px;
+            border-radius: 5px;
+            overflow: none;
+            margin-bottom: 11px;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .project-category {
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .project-desc {
+            /* font-size: 14px; */
+            flex-grow: 1;
+            /* overflow: scroll; */
+        }
+        
+        .project-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .project-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .project-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: var(--secondary-color);
+        }
+        
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--secondary-color);
+        }
+        
         /* Certifications Section */
         .certifications {
             background-color: white;
@@ -327,6 +430,7 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#certifications">Certifications</a></li>
@@ -441,6 +545,130 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Project 1 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="./logo1.png" alt="Project Image">
+                            </div>
+                            <h3 class="project-title">Qantas: Use Points Page Revamp</h3>
+
+                            <p class="project-desc">Led the modernization of Use Points page design and user experience to drive greater engagement and conversion.</p>
+                            <ul style="padding-left: 13px;">
+                                <li>Observed 95% increase in page traffic and engagement.</li>
+                                <li>Observed 18% reduction in bouce rate.</li>
+                            </ul>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="./logo1.png" alt="Project Image">
+                            </div>
+                            <h3 class="project-title">Qantas: Entertainment Hub</h3>
+                            <p class="project-desc" style="font-size: 13px;">An exclusive platform for Qantas Frequent Flyer members to redeem Qantas Points for VIP concert tickets, behind-the-scenes
+                                access, and special event packages.</p>
+                                <ul style="padding-left: 13px; font-size: 13px;">
+                                    <li>Delivered the product MVP ahead of schedule, enabling promotion of key Ticketek events.</li>
+                                    <li>80% increase in member engagement for highly sought-after experiences through
+                                        points redemption.</li>
+                                    <li>Supported continuous feature development post-launch, based on
+                                        customer feedback and data.</li>
+                                </ul>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="./logo1.png" alt="Project Image">
+                            </div>
+                            <h3 class="project-title">Qantas: Top-Up Points Revamp</h3>
+                            <p class="project-desc">Redesigned the Top-Up Points purchase journey to be faster, simpler, and
+                                mobile-friendly, improving user experience and driving higher engagement.</p>
+                            <ul style="padding-left: 13px;">
+                                <li>60% increase in Top-Up Points transactions.</li>
+                                <li>75% increase customer satisfaction observed through embedded surveys.</li>
+                            </ul>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="./logo1.png" alt="Project Image">
+                            </div>
+                            <h3 class="project-title">Qantas: Classic Rewards Plus (CR+)</h3>
+                            <p class="project-desc">Supported the on-time launch of CR+, expanding Qantas Points redemption options for more
+                                flights and airlines.</p>
+                            <ul style="padding-left: 13px;">
+                                <li>Enhanced redemption flexibility for members.</li>
+                                <li>Resolved issues pre-launch for smooth go-live.</li>
+                            </ul>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="./bluewater_control_logo.jpeg" alt="Project Image" style="margin-top: 1px;">
+                            </div>
+                            <h4 class="project-title" style="font-size: medium; margin-bottom: 3px;">Bluewater Control: Asset Management System Upgrade</h4>
+                            <p class="project-desc" style="font-size: small; margin-bottom: 5px;">V2 upgrade of Bluewater Asset Management System to improve performance, data accuracy, and user experience for telecom clients.</p>
+                            <ul style="padding-left: 12px; font-size: 12px;">
+                                <li>Improved data accuracy and reduced manual tracking.</li>
+                                <li>Increased MAU by 25% within 3 months.</li>
+                                <li>Streamlined asset reporting for faster decision-making.</li>
+                            </ul>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img src="./ndis.png" alt="Project Image" style="margin-top: 1px;">
+                            </div>
+                            <h4 class="project-title" style="font-size: medium; margin-bottom: 3px;">NDIS: SAP to Salesforce CRM Migration</h4>
+                            <p class="project-desc" >Migrated user groups and permissions from SAP to Salesforce as part of CRM migration.</p>
+                            <ul style="padding-left: 12px;">
+                                <li>Migrated permissions for 52 teams.</li>
+                                <li>Achieved 100% access continuity.</li>
+                                <li>Improved stakeholder engagement through clear communication.</li>
+                            </ul>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
@@ -530,7 +758,48 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                // when window width is >= 992px
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            }
+        });
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
